@@ -6,6 +6,7 @@ services:
     command: sh -c "cd backend && yarn install && /wait-for-it.sh mongodb-node:27017 -q -t 60 && yarn dev"
 
     environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - NODE_ENV=development
       - PORT=3000
       - MONGODB_URI=mongodb://mongodb-node:27017/anythink-market
